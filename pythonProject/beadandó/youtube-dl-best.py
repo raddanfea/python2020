@@ -1,5 +1,3 @@
-#!/usr/bin/env python3
-
 import subprocess
 import sys
 
@@ -18,13 +16,10 @@ def printHelp():
 
 
 def getLink(args):
-
     lnk = ''
-
-    for test in args[1:]:
+    for test in args:
         if 'youtu' in test:
             lnk = test
-
     return lnk
 
 
@@ -65,7 +60,6 @@ def getBestOO(response, ext, mix):
     bestAudioOption = VideoOptions(0, 0, 0, 'Not found')
     bestVideoOption = VideoOptions(0, 0, 0, 'Not found')
 
-    # analyzing lines for data
     for theLine in lines:
 
         splitLine = theLine.split()
@@ -75,8 +69,7 @@ def getBestOO(response, ext, mix):
         if mix is True or ext in theLine:
 
             try:
-                resolution = splitLine[3]
-                lineRes = int(resolution[:resolution.find('p')])
+                lineRes = int(splitLine[3][:splitLine[3].find('p')])
             except ValueError:
                 lineRes = 0
 
@@ -89,7 +82,7 @@ def getBestOO(response, ext, mix):
                 lineAud = int(theLine[audioPos + 1:audioPos + 4])
             else:
                 lineAud = 0
-            # saving data into our class object, storing object in list
+
             options.append(VideoOptions(lineId, lineRes, lineAud, theLine))
 
     for option in options:
@@ -119,10 +112,7 @@ def main():
     if '-h' in args:
         printHelp()
     else:
-        if getLink(args):
-            link = getLink(args)
-        else:
-            print('Pass -h for help.')
+        link = getLink(args)
 
     if '--webm' in args:
         ext = 'webm'
