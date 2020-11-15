@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 from copy import copy
 import random
 
@@ -16,6 +17,8 @@ def main():
     print(my_shuffled(list1)[-1])
     print("Original Unchanged:")
     print(list1)
+
+
 ####################################
 
 

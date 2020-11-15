@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 class Rectangle:
     def __init__(self, width, height):
         self.width = width
@@ -28,4 +29,5 @@ def main():
     print(r2 < r1)
 
 
-main()
+if __name__ == '__main__':
+    main()

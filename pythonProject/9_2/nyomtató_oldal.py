@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 def concat(string_input):
     list_output = []
     for each in string_input.strip().split(','):

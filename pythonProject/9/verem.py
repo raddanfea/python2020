@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 class Verem:
     def __init__(self):
         self.content = []
