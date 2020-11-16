@@ -1,11 +1,16 @@
 #!/usr/bin/env python3
 from enum import Enum, auto
+import sys
 
 
 def main():
-    words = input("Szó:")
+    if len(sys.argv) == 2:
+        words = sys.argv[1]
 
-    print(words, '->', hangrend(words))
+        print(words, '->', hangrend(words))
+    else:
+        print("Expected one argument: szó")
+
 
 class MELY(Enum):
     a = auto()
@@ -14,6 +19,7 @@ class MELY(Enum):
     ó = auto()
     u = auto()
     ú = auto()
+
 
 class MAGAS(Enum):
     e = auto()
@@ -27,7 +33,6 @@ class MAGAS(Enum):
 
 
 def hangrend(x):
-
     magas = False
     mely = False
 

@@ -1,22 +1,27 @@
 #!/usr/bin/env python3
+import sys
 
 
-def main():
-    INPUT = "checksum"
+def main(argv):
 
-    cul = 0;
+    if len(argv) == 2:
+        INPUT = argv[1]
 
-    with open(INPUT, 'r') as f1:
+        cul = 0;
 
-        for line in f1:
-            intList = [int(i) for i in line.split()]
-            high = max(intList)
-            low = min(intList)
-            cul = cul + high - low
-    print(cul)
+        with open(INPUT, 'r') as f1:
+
+            for line in f1:
+                intList = [int(i) for i in line.split()]
+                high = max(intList)
+                low = min(intList)
+                cul = cul + high - low
+        print(cul)
+    else:
+        print("Expected one argument: filename")
 
 ####################################
 
 
 if __name__ == '__main__':
-    main()
+    main(sys.argv)

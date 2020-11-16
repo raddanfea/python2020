@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+import sys
+
+
 class Rectangle:
     def __init__(self, width, height):
         self.width = width
@@ -18,15 +21,19 @@ class Rectangle:
 
 
 def main():
-    r1 = Rectangle(0, 5)
-    r2 = Rectangle(10, 20)
-    if r1:  # r1.__bool__() értéke alapján dönti el
-        print("r1 igaznak számít")
+
+    if len(sys.argv) == 1:
+        r1 = Rectangle(0, 5)
+        r2 = Rectangle(10, 20)
+        if r1:  # r1.__bool__() értéke alapján dönti el
+            print("r1 igaznak számít")
+        else:
+            print("r1 hamisnak számít")
+        print("-" * 20)
+        print(r1 < r2)  # r1.__lt__(r2) -t hívja meg nekünk
+        print(r2 < r1)
     else:
-        print("r1 hamisnak számít")
-    print("-" * 20)
-    print(r1 < r2)  # r1.__lt__(r2) -t hívja meg nekünk
-    print(r2 < r1)
+        print("Expected no argument.")
 
 
 if __name__ == '__main__':

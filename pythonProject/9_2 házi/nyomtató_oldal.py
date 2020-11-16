@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+import sys
+
 
 def concat(string_input):
     list_output = []
@@ -13,14 +15,21 @@ def concat(string_input):
 
 
 def main():
-    string1 = "1-4, 7, 9, 11-15"
-    print("TEST:")
-    print(concat(string1))
-    print("TEST SUCCESSFUL")
 
-    while True:
-        inpt = input("Írd be a saját teszted:")
-        print(concat(inpt))
+    if len(sys.argv) == 1:
+        string1 = "1-4, 7, 9, 11-15"
+        print("TEST:")
+        print(concat(string1))
+        print("TEST SUCCESSFUL")
+
+        while True:
+            inpt = input("Írd be a saját teszted:")
+
+            if inpt == 'q':
+                return False
+            print(concat(inpt))
+    else:
+        print("Expected no args.")
 
 
 if __name__ == '__main__':
