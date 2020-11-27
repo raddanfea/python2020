@@ -3,7 +3,7 @@ All its contents are under MIT license.
 
 Includes youtube-dl-best, which is a python script that uses youtube_dl to download a youtube video in the best possible quality. 
 
-    USAGE: ./youtube-dl-best [URL] [extra args]
+    USAGE: ./youtube-dl-best.py [URL] [extra args]
     
     This is a python script that help you download the best video quality using youtube_dl.
     To merge the file formats, you need ffmpeg or avconv installed.
